@@ -8,5 +8,5 @@ V博:我就是我20481     欢迎留言
 
 
 
-![image](https://github.com/GitHubazuo/EwenVideoDemo/blob/master/DemoGIF.gif)
+![image](https://github.com/GitHubazuo/0621TextViewDemo/blob/master/DemoGIF.gif)
 
