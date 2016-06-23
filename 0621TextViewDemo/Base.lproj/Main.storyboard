@@ -16,11 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvk-7B-LRl">
+                                <rect key="frame" x="159" y="184" width="282" height="30"/>
+                                <color key="backgroundColor" red="0.30980392159999998" green="0.75294117650000003" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bfN-0P-p0Z"/>
+                                    <constraint firstAttribute="width" constant="282" id="cqi-1e-7kK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="one:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vfy-AC-Sbf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lvk-7B-LRl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="164" id="EOq-iL-zvj"/>
+                            <constraint firstItem="Lvk-7B-LRl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xU1-sy-qS9"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="370" y="364"/>
         </scene>
     </scenes>
 </document>

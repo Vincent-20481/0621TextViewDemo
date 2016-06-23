@@ -79,12 +79,14 @@
 //当键盘出现或改变时调用
 - (void)keyboardWillShow:(NSNotification *)aNotification
 {
+    self.frame = kScreenBounds;
     //获取键盘的高度
     NSDictionary *userInfo = [aNotification userInfo];
     NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect keyboardRect = [aValue CGRectValue];
     int height = keyboardRect.size.height;
     if (self.textView.text.length == 0) {
+        
         self.backGroundView.frame = CGRectMake(0, kScreenheight-height-49, kScreenwidth, 49);
     }else{
         CGRect rect = CGRectMake(0, kScreenheight - self.backGroundView.frame.size.height-height, kScreenwidth, self.backGroundView.frame.size.height);
@@ -96,10 +98,12 @@
 - (void)keyboardWillHide:(NSNotification *)aNotification
 {
     if (self.textView.text.length == 0) {
-        self.backGroundView.frame = CGRectMake(0, kScreenheight-49, kScreenwidth, 49);
+        self.backGroundView.frame = CGRectMake(0, 0, kScreenwidth, 49);
+        self.frame = CGRectMake(0, kScreenheight-49, kScreenwidth, 49);
     }else{
-        CGRect rect = CGRectMake(0, kScreenheight - self.backGroundView.frame.size.height, kScreenwidth, self.backGroundView.frame.size.height);
+        CGRect rect = CGRectMake(0, 0, kScreenwidth, self.backGroundView.frame.size.height);
         self.backGroundView.frame = rect;
+        self.frame = CGRectMake(0, kScreenheight - rect.size.height, kScreenwidth, self.backGroundView.frame.size.height);
     }
 }
 
@@ -158,7 +162,8 @@
     self.placeholderLabel.text = placeholderText;
     [self.sendButton setBackgroundColor:UIColorRGB(180, 180, 180)];
     self.sendButton.userInteractionEnabled = NO;
-    self.backGroundView.frame = CGRectMake(0, kScreenheight-49, kScreenwidth, 49);
+    self.frame = CGRectMake(0, kScreenheight-49, kScreenwidth, 49);
+    self.backGroundView.frame = CGRectMake(0, 0, kScreenwidth, 49);
 }
 
 
@@ -166,7 +171,7 @@
 #pragma mark --- 懒加载控件
 - (UIView *)backGroundView{
     if (!_backGroundView) {
-        _backGroundView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenheight-49, kScreenwidth, 49)];
+        _backGroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenwidth, 49)];
         _backGroundView.backgroundColor = UIColorRGB(230, 230, 230);
         [self addSubview:_backGroundView];
     }

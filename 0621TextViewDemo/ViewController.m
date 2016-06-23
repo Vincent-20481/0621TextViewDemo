@@ -25,8 +25,8 @@
 
 - (EwenTextView *)ewenTextView{
     if (!_ewenTextView) {
-        _ewenTextView = [[EwenTextView alloc]initWithFrame:kScreenBounds];
-        _ewenTextView.backgroundColor = [UIColor clearColor];
+        _ewenTextView = [[EwenTextView alloc]initWithFrame:CGRectMake(0, kScreenheight-49, kScreenwidth, 49)];
+        _ewenTextView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
         [_ewenTextView setPlaceholderText:@"请输入文字"];
         _ewenTextView.EwenTextViewBlock = ^(NSString *test){
             NSLog(@"%@",test);
@@ -35,6 +35,9 @@
     return _ewenTextView;
 }
 
+- (IBAction)one:(UIButton *)sender {
+     NSLog(@"我被点击了");
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
